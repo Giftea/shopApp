@@ -5,6 +5,7 @@ import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/loginScreen";
 import RegisterScreen from "./screens/registerScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const { default: Footer } = require("./components/Footer");
 const { default: Header } = require("./components/Header");
@@ -14,13 +15,17 @@ function App() {
     <Router>
       <Header />
       <main className="py-3">
-        <Container>
-          <Route path="/register" component={RegisterScreen} exact />
-          <Route path="/login" component={LoginScreen} exact />
-          <Route path="/product/:id" component={ProductScreen} />
-          <Route path="/cart/:id?" component={CartScreen} />
+        <>
+          {" "}
           <Route path="/" component={HomeScreen} exact />
-        </Container>
+          <Container>
+            <Route path="/profile" component={ProfileScreen} exact />
+            <Route path="/register" component={RegisterScreen} exact />
+            <Route path="/login" component={LoginScreen} exact />
+            <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/cart/:id?" component={CartScreen} />
+          </Container>
+        </>
       </main>
       <Footer />
     </Router>

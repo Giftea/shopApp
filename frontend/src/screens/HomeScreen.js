@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import CarouselComponent from "../components/Carousel";
+
+
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -15,7 +18,9 @@ const HomeScreen = () => {
   }, [dispatch]);
   return (
     <>
-      <h1> Latest Products</h1>
+    <CarouselComponent />
+    <Container>
+    <h1> Latest Products</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -31,6 +36,7 @@ const HomeScreen = () => {
           })}
         </Row>
       )}
+    </Container>
     </>
   );
 };

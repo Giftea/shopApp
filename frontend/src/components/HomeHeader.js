@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import {logout} from "../actions/userActions"
 
-const Header = () => {
+const HomeHeader = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const {userInfo} = userLogin;
@@ -14,10 +14,10 @@ const Header = () => {
   }
   return (
     <header>
-      <Navbar text-dark collapseOnSelect expand="lg">
+      <Navbar  variant="light" bg="transperant" text-dark collapseOnSelect expand="lg">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>BabyShop</Navbar.Brand>
+            <Navbar.Brand>ProShop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -49,4 +49,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

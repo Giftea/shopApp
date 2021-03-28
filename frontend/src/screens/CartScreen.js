@@ -27,16 +27,14 @@ const CartScreen = ({ history, match, location }) => {
     }
   }, [dispatch, productId, qty]);
   const removeFromCartHandler = (id, qty) => {
-    if(qty > 1) {
-      return qty = 1
-    }else{
-      dispatch(removeFromCart(id))
+    if (qty > 1) {
+      return (qty = 1);
+    } else {
+      dispatch(removeFromCart(id));
     }
-    
-    
   };
   const checkout = (id) => {
-    history.push('/login?redirect=shipping')
+    history.push("/login?redirect=shipping");
   };
   return (
     <Row>
@@ -91,36 +89,34 @@ const CartScreen = ({ history, match, location }) => {
             ))}
           </ListGroup>
         )}
-                          <Col md={4}>
-                    <Card>
-                      <ListGroup variant="flush">
-                        <ListGroup.Item>
-                          <h5>
-                            Sub Total (
-                            {cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                            ) items
-                          </h5>
-                          $
-                          {cartItems
-                            .reduce(
-                              (acc, item) => acc + item.qty * item.price,
-                              0
-                            )
-                            .toFixed(2)}
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                          <Button
-                            type="button"
-                            onClick={() => {
-                              checkout();
-                            }}
-                            className="btn btn-block"
-                            disabled={cartItems.length === 0}
-                          >Proceed to Checkout</Button>
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Card>
-                  </Col>
+        <Col md={4}>
+          <Card>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+                <h5>
+                  Sub Total (
+                  {cartItems.reduce((acc, item) => acc + item.qty, 0)}) items
+                </h5>
+                $
+                {cartItems
+                  .reduce((acc, item) => acc + item.qty * item.price, 0)
+                  .toFixed(2)}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Button
+                  type="button"
+                  onClick={() => {
+                    checkout();
+                  }}
+                  className="btn btn-block"
+                  disabled={cartItems.length === 0}
+                >
+                  Proceed to Checkout
+                </Button>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+        </Col>
       </Col>
     </Row>
   );
