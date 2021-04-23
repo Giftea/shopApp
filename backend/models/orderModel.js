@@ -50,11 +50,11 @@ const orderSchema = mongoose.Schema(
         required: true,
       },
     },
-    payementMethod: {
+    paymentMethod: {
       type: String,
       required: true,
     },
-    payementResult: {
+    paymentResult: {
       id: { type: String },
       status: { type: String },
       update_time: { type: String },
