@@ -10,7 +10,8 @@ import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
-
+import UserListScreen from "./screens/UserListScreen";
+import UserEditScreen from "./screens/UserEditScreen";
 
 const { default: Footer } = require("./components/Footer");
 const { default: Header } = require("./components/Header");
@@ -33,6 +34,8 @@ function App() {
             <Route path="/payment" component={PaymentScreen} />
             <Route path="/placeorder" component={PlaceOrderScreen} />
             <Route path="/order/:id" component={OrderScreen} />
+            <Route path="/admin/userlist" component={UserListScreen} />
+            <Route path="/admin/user/:id/edit" component={UserEditScreen} />
           </Container>
         </>
       </main>
