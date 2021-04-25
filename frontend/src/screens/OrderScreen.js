@@ -20,6 +20,9 @@ import { ORDER_PAY_RESET } from "../constants/orderConstants";
 const OrderScreen = ({ match }) => {
   const orderId = match.params.id;
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const [sdkReady, setSdkReady] = useState(false);
   const dispatch = useDispatch();
 
@@ -186,7 +189,7 @@ const OrderScreen = ({ match }) => {
                   {loadingPay && <Loader />}
                   {!sdkReady ? (
                     <Loader />
-                  ) : (
+                  ) : userInfo.isAdmin ? null : (
                     <PayPalButton
                       amount={order.totalPrice}
                       onSuccess={successPaymentHandler}
