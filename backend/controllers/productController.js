@@ -5,7 +5,16 @@ import Product from "../models/productModel.js";
 //@route   GET /api/products
 //@access  Public
 export const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
+  const keyWord = req.query.keyWord
+    ? {
+        name: {
+          $regex: req.query.keyWord,
+          $options: "i",
+        },
+      }
+    : {};
+
+  const products = await Product.find({ ...keyWord });
   res.json(products);
 });
 
@@ -127,8 +136,8 @@ export const createProductReview = asyncHandler(async (req, res) => {
       product.reviews.reduce((ack, item) => item.rating + ack, 0) /
       product.reviews.length;
 
-      await product.save()
-      res.status(201).json({message: 'Review added'})
+    await product.save();
+    res.status(201).json({ message: "Review added" });
   } else {
     res.status(404);
     throw new Error("Product not found");
