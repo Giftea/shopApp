@@ -6,25 +6,31 @@ import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import CarouselComponent from "../components/Carousel";
+import Paginate from "../components/Paginate";
 
 const HomeScreen = ({ match }) => {
   const keyWord = match.params.keyWord;
+
+  const pageNumber = match.params.pageNumber || 1;
+
   const dispatch = useDispatch();
+
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+  const { loading, error, products, page, pages } = productList;
+
   useEffect(() => {
-    dispatch(listProducts(keyWord));
-  }, [dispatch, keyWord]);
+    dispatch(listProducts(keyWord, pageNumber));
+  }, [dispatch, keyWord, pageNumber]);
   return (
     <>
       <CarouselComponent />
-      <Container>
-        <h1> Latest Products</h1>
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
+      <h1> Latest Products</h1>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">{error}</Message>
+      ) : (
+        <>
           <Row>
             {products.map((product) => {
               return (
@@ -34,8 +40,13 @@ const HomeScreen = ({ match }) => {
               );
             })}
           </Row>
-        )}
-      </Container>
+          <Paginate
+            pages={pages}
+            page={page}
+            keyWord={keyWord ? keyWord : ""}
+          />
+        </>
+      )}
     </>
   );
 };

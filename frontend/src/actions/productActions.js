@@ -20,10 +20,14 @@ import {
   PRODUCT_CREATE_REVIEW_FAIL,
 } from "../constants/productConstants";
 
-export const listProducts = (keyWord = "") => async (dispatch) => {
+export const listProducts = (keyWord = "", pageNumber = "") => async (
+  dispatch
+) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const { data } = await axios.get(`/api/products?keyWord=${keyWord}`);
+    const { data } = await axios.get(
+      `/api/products?keyWord=${keyWord}&pageNumber=${pageNumber}`
+    );
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
