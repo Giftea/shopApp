@@ -34,7 +34,7 @@ const UserListScreen = ({ history }) => {
 
   return (
     <>
-      <h1>Users</h1>
+      <h1 className='py-5'>Users</h1>
       {loading ? (
         <Loader />
       ) : error ? (

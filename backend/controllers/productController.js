@@ -5,7 +5,7 @@ import Product from "../models/productModel.js";
 //@route   GET /api/products
 //@access  Public
 export const getProducts = asyncHandler(async (req, res) => {
-  const pageSize = 10;
+  const pageSize = 12;
   const page = Number(req.query.pageNumber) || 1;
   const keyWord = req.query.keyWord
     ? {

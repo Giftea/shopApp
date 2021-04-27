@@ -1,13 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta:400,400i,500,500i,600,600i,700,700i,800,800i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap");
 
+/* GLOBAL STYLES */
+:root {
+  --bg: #eb9181;
+  --purple: #640535;
+}
+
+body {
+  font-family: "Playfair Display";
+}
 
 main {
   min-height: 80vh;
-
+  /* padding-top: 0 !important; */
 }
-h3{
-padding: 1rem 0;
+h3 {
+  padding: 1rem 0;
 }
-h1{
+h1 {
   font-size: 1.4rem;
   padding: 0.1rem;
 }
@@ -16,29 +27,65 @@ h1{
   margin: 0.1rem;
 }
 
+/* header */
+.navbar {
+  background-color: #eb9181;
+}
+
 /* carousel */
 .carousel-item-next,
 .carousel-item-prev,
-.carousel-item-active{
+.carousel-item-active {
   display: flex;
+  z-index: 11;
 }
-
-.carousel-caption{
+.carousel-bg {
+  /* background-color: #eb9181; */
+}
+.carousel-caption {
   position: absolute;
-  top: 0;
+  right: 0 !important;
+}
+.custom-carousel-caption {
+  position: absolute;
+  bottom: 46% !important;
+  left: 60% !important;
 }
 
-.carousel-caption h2{
-  color: #fff;
+.carousel-caption h3 {
+  font-family: "Mukta";
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: rgb(55, 50, 50);
 }
 
 .carousel img {
-  height: 300px;
-  padding: 30px;
-  margin: 40px;
-  border-radius: 50%;
-}
+  /* height: 300px; */
+  object-fit: cover;
 
-.carousel a{
+  /* padding: 30px; */
+  /* margin: 40px; */
+  /* border-radius: 50%; */
+}
+.carousel a {
   margin: 0 auto;
+  z-index: 11;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  border-radius: 7px;
+  background: linear-gradient(rgba(138, 137, 137, 0.5), #e4725e48);
+  opacity: 1;
+  transition: 1s;
+}
+/* home screen */
+
+.product_img {
+  object-fit: cover;
+  height: 210px;
 }

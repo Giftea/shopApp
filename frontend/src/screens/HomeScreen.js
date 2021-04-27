@@ -5,7 +5,7 @@ import Product from "../components/Product";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import CarouselComponent from "../components/Carousel";
+import {CarouselComponent, TopCarousel} from "../components/Carousel";
 import Paginate from "../components/Paginate";
 
 const HomeScreen = ({ match }) => {
@@ -23,7 +23,7 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyWord, pageNumber]);
   return (
     <>
-    {!keyWord && <CarouselComponent />}
+    {!keyWord && <TopCarousel />}
 
       {loading ? (
         <Loader />
@@ -31,7 +31,7 @@ const HomeScreen = ({ match }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
-        <Container>
+        <Container className='py-5' >
           <Row>
             {products.map((product) => {
               return (

@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main className="py-3">
+      <main >
         <>
           {" "}
           <Route path="/" component={HomeScreen} exact />

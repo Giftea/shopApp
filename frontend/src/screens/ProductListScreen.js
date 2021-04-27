@@ -46,7 +46,7 @@ const ProductListScreen = ({ history, match }) => {
       history.push("/login");
     }
     if (successCreate) {
-      history.push(`admin/product/${createdProduct._id}/edit`);
+      history.push(`/admin/product/${createdProduct._id}/edit`);
     }
   }, [
     dispatch,
@@ -70,7 +70,7 @@ const ProductListScreen = ({ history, match }) => {
 
   return (
     <>
-      <Row className="align-items-center">
+      <Row className="align-items-center" className='py-5'>
         <Col>
           <h1>Products</h1>
         </Col>

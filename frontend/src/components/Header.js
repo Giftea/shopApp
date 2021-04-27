@@ -17,7 +17,7 @@ const Header = () => {
   };
   return (
     <header>
-      <Navbar bg="warning" text-dark collapseOnSelect expand="lg">
+      <Navbar  text-dark collapseOnSelect expand="lg">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>BabyShop</Navbar.Brand>
