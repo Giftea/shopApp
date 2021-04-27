@@ -23,14 +23,15 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyWord, pageNumber]);
   return (
     <>
-      <CarouselComponent />
-      <h1> Latest Products</h1>
+    {!keyWord && <CarouselComponent />}
+
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+        <Container>
           <Row>
             {products.map((product) => {
               return (
@@ -45,6 +46,7 @@ const HomeScreen = ({ match }) => {
             page={page}
             keyWord={keyWord ? keyWord : ""}
           />
+          </Container>
         </>
       )}
     </>
