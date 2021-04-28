@@ -33,7 +33,7 @@ const UserListScreen = ({ history }) => {
   };
 
   return (
-    <>
+    <div className='marg-top'>
       <h1 className='py-5'>Users</h1>
       {loading ? (
         <Loader />
@@ -84,7 +84,7 @@ const UserListScreen = ({ history }) => {
           </tbody>
         </Table>
       )}
-    </>
+    </div>
   );
 };
 

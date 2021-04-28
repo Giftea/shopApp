@@ -15,6 +15,7 @@ import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
+import ScrollToTop from "./components/ScrollToTop";
 
 const { default: Footer } = require("./components/Footer");
 const { default: Header } = require("./components/Header");
@@ -22,6 +23,7 @@ const { default: Header } = require("./components/Header");
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <main >
         <>

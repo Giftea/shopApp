@@ -46,7 +46,7 @@ const UserEditScreen = ({ history, match }) => {
     dispatch(updateUser({ _id: userId, name, email, isAdmin }));
   };
   return (
-    <>
+    <div className='marg-top py-5'>
       <Link to={"/admin/userlist"} className="btn btn-light my-3">
         Go Back
       </Link>
@@ -87,13 +87,13 @@ const UserEditScreen = ({ history, match }) => {
                 onChange={(e) => setIsAdmin(e.target.checked)}
               ></Form.Check>
             </Form.Group>
-            <Button type="submit" variant="primary">
+            <Button type="submit" className='btn-blue'>
               Update
             </Button>
           </Form>
         )}
       </FormContainer>
-    </>
+    </div>
   );
 };
 

@@ -17,14 +17,18 @@ const Header = () => {
   };
   return (
     <header>
-      <Navbar  text-dark collapseOnSelect expand="lg">
+      <Navbar text-dark collapseOnSelect expand="lg">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>BabyShop</Navbar.Brand>
+            <Navbar.Brand className="brand__name">KiddiezShop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Route render={({ history }) => <SearchBox history={history} />} />
+            <div>
+              <Route
+                render={({ history }) => <SearchBox history={history} />}
+              />
+            </div>
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>

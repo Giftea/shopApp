@@ -1,13 +1,19 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Rating from "./Rating";
+import { motion } from "framer-motion";
 
 const Product = ({ product }) => {
   return (
     <Card className="my-3 p-3 rounded">
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant="top" className='product_img' />
+        <motion.img
+          src={product.image}
+          whileHover={{ scale: 1.1 }}
+          variant="top"
+          className="card-img-top product_img"
+        />
       </Link>
       <Card.Body>
         <Link to={`/product/${product._id}`}>

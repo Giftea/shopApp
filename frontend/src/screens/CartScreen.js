@@ -37,7 +37,7 @@ const CartScreen = ({ history, match, location }) => {
     history.push("/login?redirect=shipping");
   };
   return (
-    <Row className='py-5'>
+    <Row className='py-5 marg-top'>
       <Col md={12}>
         <h1>SHOPPING CART</h1>
         {cartItems.length === 0 ? (
@@ -108,7 +108,7 @@ const CartScreen = ({ history, match, location }) => {
                   onClick={() => {
                     checkout();
                   }}
-                  className="btn btn-block"
+                  className="btn btn-block btn-blue"
                   disabled={cartItems.length === 0}
                 >
                   Proceed to Checkout

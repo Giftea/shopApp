@@ -16,9 +16,7 @@ const PaymentScreen = ({ history }) => {
     history.push("/shipping");
   }
 
-  const [paymentMethod, setPaymentMethod] = useState(
-    "Paypal"
-  );
+  const [paymentMethod, setPaymentMethod] = useState("Paypal");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -27,43 +25,41 @@ const PaymentScreen = ({ history }) => {
   };
 
   return (
-    <FormContainer>
-      <CheckoutSteps step1 step2 step3 />
-      <h1>Shipping</h1>
-      <Form onSubmit={submitHandler}>
-        <Form.Group>
-          <Form.Label as="legend">Select Method</Form.Label>
-          <Col>
-            <Form.Check
-              type="radio"
-              label="Paypal or Credit Card"
-              id="Paypal"
-              name=" paymentMethod"
-              value="Paypal"
-              checked
-              onChange={(e) => setPaymentMethod(e.targe.value)}
-            >
-            </Form.Check>
+    <div className="marg-top py-5">
+      <FormContainer className="marg-top">
+        <CheckoutSteps step1 step2 step3 />
+        <h1>Shipping</h1>
+        <Form onSubmit={submitHandler}>
+          <Form.Group>
+            <Form.Label as="legend">Select Method</Form.Label>
+            <Col>
+              <Form.Check
+                type="radio"
+                label="Paypal or Credit Card"
+                id="Paypal"
+                name=" paymentMethod"
+                value="Paypal"
+                checked
+                onChange={(e) => setPaymentMethod(e.targe.value)}
+              ></Form.Check>
 
-            <Form.Check
-              type="radio"
-              label="Stripe"
-              id="Stripe"
-              name=" paymentMethod"
-              value="Stripe"
-              onChange={(e) => setPaymentMethod(e.targe.value)}
-            >
-            </Form.Check>
-          </Col>
-        </Form.Group>
+              <Form.Check
+                type="radio"
+                label="Stripe"
+                id="Stripe"
+                name=" paymentMethod"
+                value="Stripe"
+                onChange={(e) => setPaymentMethod(e.targe.value)}
+              ></Form.Check>
+            </Col>
+          </Form.Group>
 
-        
-
-        <Button type="submit" variant="primary">
-          Continue
-        </Button>
-      </Form>
-    </FormContainer>
+          <Button type="submit" className='btn-blue' >
+            Continue
+          </Button>
+        </Form>
+      </FormContainer>
+    </div>
   );
 };
 

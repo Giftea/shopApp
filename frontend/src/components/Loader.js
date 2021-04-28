@@ -1,20 +1,27 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
+import loaderStyle from '../style/loader.css'
 
 const Loader = () => {
   return (
-    <Spinner
-      animation="border"
-      role="status"
-      style={{
-        width: "100px",
-        height: "100px",
-        margin: "auto",
-        display: "block",
-      }}
-    >
-        <span className="sr-only">Loading...</span>
-    </Spinner>
+    <>
+      <div class="loadingio-spinner-spinner-zd1g22ama6 mb-5 marg-top">
+        <div class="ldio-35zw57s58hz">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </>
   );
 };
 

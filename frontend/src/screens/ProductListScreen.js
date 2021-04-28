@@ -69,13 +69,13 @@ const ProductListScreen = ({ history, match }) => {
   };
 
   return (
-    <>
-      <Row className="align-items-center" className='py-5'>
+    <div className='marg-top'>
+      <Row className="align-items-center py-5" >
         <Col>
           <h1>Products</h1>
         </Col>
         <Col className=" text-right">
-          <Button className="my-3" onClick={createProductHandler}>
+          <Button className="my-3 btn-orange" onClick={createProductHandler}>
             <i className="fas fa-plus"></i> Create Product
           </Button>
         </Col>
@@ -129,7 +129,7 @@ const ProductListScreen = ({ history, match }) => {
         <Paginate pages={pages} page={page} isAdmin={true} />
         </>
       )}
-    </>
+    </div>
   );
 };
 

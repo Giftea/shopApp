@@ -90,11 +90,11 @@ const ProductEditScreen = ({ history, match }) => {
     }
   }
   return (
-    <>
+    <div className='marg-top py-5'>
       <Link to={"/admin/productlist"} className="btn btn-light my-3">
         Go Back
       </Link>
-      <FormContainer>
+      <FormContainer >
         <h1>Edit Product</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate} </Message>}
@@ -179,13 +179,13 @@ const ProductEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button type="submit" className='btn-blue'>
               Update
             </Button>
           </Form>
         )}
       </FormContainer>
-    </>
+    </div>
   );
 };
 

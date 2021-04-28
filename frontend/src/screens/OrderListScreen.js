@@ -26,9 +26,9 @@ const OrderListScreen = ({ history, match }) => {
 
   return (
     <>
-      <Row className="align-items-center" className='py-5'>
+      <Row className="align-items-center marg-top py-5" >
         <Col>
-          <h1>ORDERS</h1>
+          <h1>Orders</h1>
         </Col>
       </Row>
       {loading ? (

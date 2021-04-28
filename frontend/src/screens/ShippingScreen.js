@@ -23,7 +23,8 @@ const ShippingScreen = ({ history }) => {
     history.push("/payment");
   };
   return (
-    <FormContainer>
+    <div className='marg-top py-5'>
+  <FormContainer >
       <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
@@ -72,11 +73,13 @@ const ShippingScreen = ({ history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" className='btn-blue'>
           Continue
         </Button>
       </Form>
     </FormContainer>
+    </div>
+  
   );
 };
 

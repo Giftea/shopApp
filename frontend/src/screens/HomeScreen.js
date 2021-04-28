@@ -5,8 +5,9 @@ import Product from "../components/Product";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import {CarouselComponent, TopCarousel} from "../components/Carousel";
+import { CarouselComponent, TopCarousel } from "../components/Carousel";
 import Paginate from "../components/Paginate";
+import Hero from "../components/Hero";
 
 const HomeScreen = ({ match }) => {
   const keyWord = match.params.keyWord;
@@ -20,35 +21,38 @@ const HomeScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(listProducts(keyWord, pageNumber));
+   
   }, [dispatch, keyWord, pageNumber]);
   return (
     <>
-    {!keyWord && <TopCarousel />}
+      {!keyWord && <Hero />}
 
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant="danger">{error}</Message>
+        <Message  className="py-5 marg-top" variant="danger">{error}</Message>
       ) : (
         <>
-        <Container className='py-5' >
-          <Row>
-            {products.map((product) => {
-              return (
-                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                  <Product product={product} />
-                </Col>
-              );
-            })}
-          </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyWord={keyWord ? keyWord : ""}
-          />
+          <Container className="py-5 marg-top">
+            <Row>
+              {products.map((product) => {
+                return (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                );
+              })}
+            </Row>
+            <Paginate
+              pages={pages}
+              page={page}
+              keyWord={keyWord ? keyWord : ""}
+            />
+            {/* <Loader /> */}
           </Container>
         </>
       )}
+      {/* {!keyWord && <TopCarousel />} */}
     </>
   );
 };

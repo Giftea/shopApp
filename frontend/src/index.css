@@ -1,19 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Mukta:400,400i,500,500i,600,600i,700,700i,800,800i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,600,600i,700,700i,800,800i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap");
 
 /* GLOBAL STYLES */
 :root {
   --bg: #eb9181;
   --purple: #640535;
+  --light: #f8dad5;
+  --sec: #eea396;
 }
 
-body {
+body,html {
   font-family: "Playfair Display";
+  overflow-x: hidden;
+  background-color: #c5c5c527 !important;
+}
+
+p,
+h1,
+h2,
+h3 {
+  font-family: "Roboto";
+}
+h1,
+h2,
+h3 {
+  text-transform: capitalize !important;
+  color: rgb(55, 50, 50) !important;
 }
 
 main {
   min-height: 80vh;
-  /* padding-top: 0 !important; */
 }
 h3 {
   padding: 1rem 0;
@@ -27,9 +45,36 @@ h1 {
   margin: 0.1rem;
 }
 
+.marg-top{
+  margin-top: 120px;
+}
+
+.btn-orange{
+  background-color: var(--bg) !important;
+}
+.btn-blue{
+  background-color: #1b306b !important;
+}
+
 /* header */
 .navbar {
-  background-color: #eb9181;
+  position: fixed !important;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10000000;
+  box-shadow:2px 2px 10px 2px rgba(236, 151, 151, 0.145) ;
+  top: 0;
+}
+
+.brand__name {
+  font-family: "Dancing Script";
+  font-size: 2.5rem !important;
+  text-transform: capitalize;
+  color: #1b306b !important;
+  text-shadow: 0 1px #808d93, -1px 0 #f8dad5, -1px 2px #808d93, -2px 1px #f8dad5,
+    -2px 3px #808d93, -3px 2px #f8dad5, -3px 4px #808d93, -4px 3px #f8dad5,
+    -4px 5px #808d93, -5px 4px #f8dad5, -5px 6px #808d93, -6px 5px #f8dad5,
+    -6px 7px #808d93, -7px 6px #f8dad5, -7px 8px #808d93, -8px 7px #f8dad5;
 }
 
 /* carousel */
@@ -40,7 +85,13 @@ h1 {
   z-index: 11;
 }
 .carousel-bg {
-  /* background-color: #eb9181; */
+  background: rgb(248, 218, 213);
+  background: radial-gradient(
+    circle,
+    rgba(248, 218, 213, 1) 4%,
+    rgba(235, 145, 129, 1) 100%
+  );
+  height: 80vh;
 }
 .carousel-caption {
   position: absolute;
@@ -48,8 +99,8 @@ h1 {
 }
 .custom-carousel-caption {
   position: absolute;
-  bottom: 46% !important;
-  left: 60% !important;
+  /* bottom: 46% !important;
+  left: 60% !important; */
 }
 
 .carousel-caption h3 {
@@ -60,12 +111,12 @@ h1 {
 }
 
 .carousel img {
-  /* height: 300px; */
+  height: 70vh;
   object-fit: cover;
 
   /* padding: 30px; */
   /* margin: 40px; */
-  /* border-radius: 50%; */
+  border-radius: 50%;
 }
 .carousel a {
   margin: 0 auto;
@@ -84,8 +135,54 @@ h1 {
   transition: 1s;
 }
 /* home screen */
-
+.product_img-cont {
+  height: 300px;
+}
+.product_img-cont > img{
+  height: 100%;
+  width: 70%;
+  object-fit: cover;
+}
 .product_img {
   object-fit: cover;
   height: 210px;
+}
+
+/* HERO */
+.hero-bg {
+  background: rgb(248, 218, 213);
+  background: radial-gradient(
+    circle,
+    rgba(248, 218, 213, 1) 4%,
+    rgba(235, 145, 129, 1) 100%
+  );
+  height: 80vh;
+}
+
+.hero{
+  flex-wrap: wrap;
+}
+.hero-img-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  height: 70vh;
+}
+
+.hero-text {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/*  */
+.white-card{
+  background-color: #fff;
+  border-radius: 10px;
+ 
+}
+
+.marg-top-2{
+  margin-top: 20%;
 }

@@ -65,9 +65,9 @@ const PlaceOrderScreen = ({ history }) => {
   };
 
   return (
-    <>
+    <div className='marg-top py-5'>
       <CheckoutSteps step1 step2 step3 step4 />
-      <Row>
+      <Row  >
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
@@ -154,7 +154,7 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Button
                   type="button"
-                  className="btn-block"
+                  className="btn-block btn-blue"
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >
@@ -165,7 +165,7 @@ const PlaceOrderScreen = ({ history }) => {
           </Card>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 
