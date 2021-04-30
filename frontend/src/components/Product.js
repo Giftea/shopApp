@@ -11,6 +11,7 @@ const Product = ({ product }) => {
         <motion.img
           src={product.image}
           whileHover={{ scale: 1.1 }}
+          transition={{duration:1}}
           variant="top"
           className="card-img-top product_img"
         />

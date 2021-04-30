@@ -18,7 +18,7 @@ import {
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -60,21 +60,27 @@ const ProductScreen = ({ history, match }) => {
   };
 
   return (
-    <motion.div className='marg-top py-5' transition={{duration: 1.3}}>
+    <motion.div className="marg-top py-5" transition={{ duration: 1.3 }}>
       <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
       {loading ? (
         <Loader />
-      ) 
-      : error ? (
+      ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
         <>
           {" "}
-          <Row >
-            <Col md={6} className='product_img-cont'>
-              <Image src={product.image} alt={product.name} className='d-block' />
+          <Row>
+            <Col md={6} className="product_img-cont">
+              <motion.img
+                initial={{ opacity: 0.1 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
+                src={product.image}
+                alt={product.name}
+                className="d-block"
+              />
             </Col>
 
             <Col md={3}>

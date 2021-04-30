@@ -7,19 +7,19 @@ const Hero = () => {
   return (
     <div className="hero-bg marg-top ">
       <Row className="px-3 hero">
-        <Col className="px-0 hero-text">
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, scale: 1.5 }}
-            transition={{ delay: 1.2, duration: 2 }}
-          >
-            Lorem, ipsum dolor.
-          </motion.h1>
-        </Col>
+        <motion.div
+          className="col px-0 hero-text"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: 1.5 }}
+          transition={{ delay: 1.2, duration: 2 }}
+        >
+          <h1>Baby Friendly SWAG</h1>
+          <h4>Every Parent needs</h4>
+        </motion.div>
         <Col className="px-0 hero-img-cont">
           <motion.img
-            initial={{ x: "20vw", opacity: 0, height: "50vh" }}
-            animate={{ x: 0, opacity: 1, height: "70vh" }}
+            initial={{ x: "20vw", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 1.3 }}
             src={img1}
             className="hero-img"

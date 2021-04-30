@@ -173,8 +173,17 @@ h1 {
 
 .hero-text {
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
+}
+.hero-text > h1{
+  color: #fff !important;
+  text-transform: uppercase;
+}
+.hero-text > h4{
+  color: #1b306b !important;
+  text-align: left;
 }
 /*  */
 .white-card{
