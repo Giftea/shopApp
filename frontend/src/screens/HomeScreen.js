@@ -5,7 +5,6 @@ import Product from "../components/Product";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import CarouselComponent from "../components/Carousel";
 import Paginate from "../components/Paginate";
 import Hero from "../components/Hero";
 
@@ -49,11 +48,9 @@ const HomeScreen = ({ match }) => {
               page={page}
               keyWord={keyWord ? keyWord : ""}
             />
-            {/* <Loader /> */}
           </Container>
         </>
       )}
-      {/* {!keyWord && <TopCarousel />} */}
     </>
   );
 };
