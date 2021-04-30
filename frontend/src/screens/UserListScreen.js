@@ -24,17 +24,17 @@ const UserListScreen = ({ history }) => {
     } else {
       history.push("/login");
     }
-  }, [dispatch, history, successDelete,userInfo]);
+  }, [dispatch, history, successDelete, userInfo]);
 
   const deleteHandler = (id) => {
-    if(window.confirm('Are you sure you want to delete this user?')){
-      dispatch(deleteUser(id))
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      dispatch(deleteUser(id));
     }
   };
 
   return (
-    <div className='marg-top'>
-      <h1 className='py-5'>Users</h1>
+    <div className="marg-top">
+      <h1 className="py-5">Users</h1>
       {loading ? (
         <Loader />
       ) : error ? (

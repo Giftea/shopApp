@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Form, Button, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
@@ -54,7 +53,7 @@ const PaymentScreen = ({ history }) => {
             </Col>
           </Form.Group>
 
-          <Button type="submit" className='btn-blue' >
+          <Button type="submit" className="btn-blue">
             Continue
           </Button>
         </Form>

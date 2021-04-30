@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  Form,
-  Button,
-  Col,
-  Row,
-  ListGroup,
-  Image,
-  Card,
-} from "react-bootstrap";
+import { Button, Col, Row, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { createOrder } from "../actions/orderActions";
-import { ORDER_CREATE_RESET } from "../constants/orderConstants";
-import { USER_DETAILS_RESET } from "../constants/userConstants";
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -48,7 +38,7 @@ const PlaceOrderScreen = ({ history }) => {
     if (success) {
       history.push(`/order/${order._id}`);
     }
-  }, [history, success]);
+  }, [history, success, order._id]);
 
   const placeOrderHandler = () => {
     dispatch(
@@ -65,9 +55,9 @@ const PlaceOrderScreen = ({ history }) => {
   };
 
   return (
-    <div className='marg-top py-5'>
+    <div className="marg-top py-5">
       <CheckoutSteps step1 step2 step3 step4 />
-      <Row  >
+      <Row>
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
@@ -149,7 +139,7 @@ const PlaceOrderScreen = ({ history }) => {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                {error && <Message variant='danger'>{error}</Message>}
+                {error && <Message variant="danger">{error}</Message>}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button

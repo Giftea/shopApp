@@ -2,15 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
 import { Link } from "react-router-dom";
-import {
-  Form,
-  Button,
-  Col,
-  Row,
-  ListGroup,
-  Image,
-  Card,
-} from "react-bootstrap";
+import { Button, Col, Row, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -69,7 +61,7 @@ const OrderScreen = ({ match, history }) => {
         setSdkReady(true);
       }
     }
-  }, [dispatch, orderId, successPay, order, successDeliver]);
+  }, [dispatch, orderId, successPay, order, successDeliver, history, userInfo]);
 
   if (!loading) {
     //Calculations
@@ -96,8 +88,8 @@ const OrderScreen = ({ match, history }) => {
   ) : error ? (
     <Message variant="danger">{error}</Message>
   ) : (
-    <div className='py-3 marg-top'>
-      <h1 className='py-5'>Order {order._id}</h1>
+    <div className="py-3 marg-top">
+      <h1 className="py-5">Order {order._id}</h1>
 
       <Row>
         <Col md={8}>

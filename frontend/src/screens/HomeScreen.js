@@ -5,7 +5,7 @@ import Product from "../components/Product";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import { CarouselComponent, TopCarousel } from "../components/Carousel";
+import CarouselComponent from "../components/Carousel";
 import Paginate from "../components/Paginate";
 import Hero from "../components/Hero";
 
@@ -21,7 +21,6 @@ const HomeScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(listProducts(keyWord, pageNumber));
-   
   }, [dispatch, keyWord, pageNumber]);
   return (
     <>
@@ -30,7 +29,9 @@ const HomeScreen = ({ match }) => {
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message  className="py-5 marg-top" variant="danger">{error}</Message>
+        <Message className="py-5 marg-top" variant="danger">
+          {error}
+        </Message>
       ) : (
         <>
           <Container className="py-5 marg-top">

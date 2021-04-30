@@ -1,5 +1,4 @@
 import axios from "axios";
-import { CART_CLEAR_ITEMS } from "../constants/cartConstants";
 import {
   ORDER_CREATE_REQUEST,
   ORDER_CREATE_SUCCESS,
@@ -20,7 +19,6 @@ import {
   ORDER_DELIVER_SUCCESS,
   ORDER_DELIVER_REQUEST,
 } from "../constants/orderConstants";
-import { logout } from "./userActions";
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -127,10 +125,7 @@ export const payOrder = (orderId, paymentResult) => async (
   }
 };
 
-export const deliverOrder = (order) => async (
-  dispatch,
-  getState
-) => {
+export const deliverOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({
       type: ORDER_DELIVER_REQUEST,
@@ -146,7 +141,8 @@ export const deliverOrder = (order) => async (
     };
 
     const { data } = await axios.put(
-      `/api/orders/${order._id}/deliver`, {},
+      `/api/orders/${order._id}/deliver`,
+      {},
       config
     );
 

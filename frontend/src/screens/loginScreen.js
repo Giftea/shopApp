@@ -25,7 +25,7 @@ const LoginScreen = ({ location, history }) => {
     dispatch(login(email, password));
   };
   return (
-    <div className="marg-top py-5 white-card marg-top-2">
+    <div className=" py-5 white-card marg-top-2">
       <FormContainer>
         <h1>Sign In</h1>
         {error && <Message variant="danger">{error}</Message>}
@@ -50,7 +50,7 @@ const LoginScreen = ({ location, history }) => {
               onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button type="submit" className='btn-blue'>
+          <Button type="submit" className="btn-blue">
             Sign In
           </Button>
         </Form>

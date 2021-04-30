@@ -33,7 +33,7 @@ const RegisterScreen = ({ location, history }) => {
     }
   };
   return (
-    <div className="marg-top py-5 white-card marg-top-2">
+    <div className=" py-5 white-card marg-top-2">
       <FormContainer>
         <h1>Sign Up</h1>
         {message && <Message variant="danger">{message}</Message>}
