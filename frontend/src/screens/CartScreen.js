@@ -39,7 +39,7 @@ const CartScreen = ({ history, match, location }) => {
   return (
     <Row className="marg-top py-5">
       <Col md={8}>
-        <h1>Shopping Cart</h1>
+        <h1 className='my-3'>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
             Your cart is empty <Link to="/">Go Back</Link>
@@ -56,7 +56,7 @@ const CartScreen = ({ history, match, location }) => {
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col xs={2}>${item.price}</Col>
-                  <Col xs={2}>
+                  <Col xs={5} sm={2}>
                     <Form.Control
                       as="select"
                       value={item.qty}

@@ -89,7 +89,7 @@ const OrderScreen = ({ match, history }) => {
     <Message variant="danger">{error}</Message>
   ) : (
     <div className="py-3 marg-top">
-      <h1 className="py-5">Order {order._id}</h1>
+      <h6 className="py-5">Order {order._id}</h6>
 
       <Row>
         <Col md={8}>
@@ -165,7 +165,7 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col md={4} className='my-3'>
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>

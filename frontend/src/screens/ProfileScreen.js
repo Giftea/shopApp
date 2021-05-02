@@ -51,8 +51,8 @@ const ProfileScreen = ({ location, history }) => {
   };
   return (
     <Row className="py-5 marg-top">
-      <Col md={3} className="p-3 white-card">
-        <h2>My Profile</h2>
+      <Col md={3} className="p-3 white-card ">
+        <h2 className='my-3'>My Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && <Message variant="success">Profile Updated</Message>}
@@ -95,13 +95,13 @@ const ProfileScreen = ({ location, history }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button type="submit" className="btn-blue">
+          <Button type="submit" className="btn-blue my-3">
             Update
           </Button>
         </Form>
       </Col>
-      <Col md={9}>
-        <h2>my orders</h2>
+      <Col md={9} className='mt-5'>
+        <h2 className='my-3'>my orders</h2>
         {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
